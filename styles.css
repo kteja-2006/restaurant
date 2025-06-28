@@ -1,18 +1,24 @@
+/* Reset + Body */
 body {
   background-color: #FAF3E0;
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
+/* Header */
 .header {
-  background-color: #F7E1A1; /* Champagne Gold */
+  background-color: #F7E1A1;
   width: 100%;
-  height: 120px;
+  height: 70px; /* Reduced height */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -21,14 +27,14 @@ body {
 }
 
 .logo img {
-  height: 200px; /* Adjusted height for a better fit */
-  margin-right: 0px; /* Space between image and text */
+  height: 80px;
+  margin-right: 10px;
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers text vertically */
+  justify-content: center;
   line-height: 1;
 }
 
@@ -46,67 +52,29 @@ body {
   margin: 0;
 }
 
+/* Navigation Options */
 .options {
   display: flex;
-  gap: 70px;
-  margin-right: 50px;
+  gap: 30px;
 }
 
 .options a {
-  padding: 10px 10px;
+  padding: 10px 15px;
   color: #943d3d;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-.options a:hover{
-
-}
-
-.options a.active{
+.options a:hover,
+.options a.active {
   background-color: #943d3d;
   color: #F7E1A1;
 }
 
-
-
-/*----------- home ----- content--------------*/
-.home .content {
-  width: 50%; /* Takes half the screen */
-  padding: 20px;
-  text-align: left;
-}
-
-.home .caption {
-  font-size: 60px; /* Increased size */
-  font-weight: bold;
-  color: #4f2a13;
-  margin-bottom: 10px;
-  max-width: 80%; /* Restricts width so it breaks into two lines */
-  line-height: 1.2; /* Adjusts line spacing */
-}
-
-.home .summary {
-  font-size: 20px;
-  color: #6b4e3d;
-  max-width: 80%; /* Same width as caption */
-}
-
-.home .picture {
-  width: 50%; /* Takes half the screen */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home .picture img {
-  width: 100%; /* Makes the image responsive */
-  max-width: 400px; /* Prevents the image from getting too large */
-  border-radius: 10px; /* Smooth rounded edges */
-}
-
-/* Layout styling */
+/* Home Section */
 .home {
   display: flex;
   align-items: center;
@@ -114,12 +82,40 @@ body {
   padding: 50px 20px;
 }
 
+.home .content {
+  width: 50%;
+  padding: 20px;
+}
 
+.home .caption {
+  font-size: 60px;
+  font-weight: bold;
+  color: #4f2a13;
+  margin-bottom: 10px;
+  max-width: 80%;
+  line-height: 1.2;
+}
 
+.home .summary {
+  font-size: 20px;
+  color: #6b4e3d;
+  max-width: 80%;
+}
 
+.home .picture {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.home .picture img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
 
-/*---------------food items--------------*/
+/* Menu Section */
 .menu-section {
   text-align: center;
   padding: 50px 20px;
@@ -132,44 +128,25 @@ body {
   margin-bottom: 20px;
 }
 
-/* Menu Buttons */
-/* Menu Buttons */
-.menu-section {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-/* Title Styling */
-.food-title {
-  font-size: 36px;
-  font-weight: bold;
-  color: #4f2a13;
-  margin-bottom: 20px;
-}
-
-/* Menu Buttons */
 .menu-links {
   display: flex;
-  justify-content: center; /* Centers the buttons */
-  flex-wrap: wrap; /* Ensures responsiveness */
-  gap: 60px; /* Equal spacing between buttons */
-  max-width: 900px; /* Restricts width for alignment */
-  margin: 0 auto 30px; /* Centers the button container */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 30px;
 }
 
 .menu-btn {
-  flex: 1; /* Makes all buttons equal width */
-  max-width: 150px; /* Prevents buttons from becoming too wide */
   background-color: #F7E1A1;
   color: #4f2a13;
   border: none;
-  padding: 12px;
+  padding: 12px 20px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
-  text-align: center;
 }
 
 .menu-btn:hover,
@@ -177,211 +154,100 @@ body {
   background-color: #e0c58f;
 }
 
+/* Menu Grid */
 .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-    gap: 20px;
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.menu-grid img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.menu-grid img:hover {
-    transform: scale(1.5);
-}
-
-
-.food-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.food-item img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-}
-
-.food-item:hover img {
-    transform: scale(1.05);
-}
-
-/* Overlay Text */
-.food-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Transparent dark background */
-    color: white;
-    padding: 5px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-}
-/* Food Categories */
-.food-category {
-  margin-bottom: 40px;
-}
-
-.category-title {
-  font-size: 28px;
-  font-weight: bold;
-  color: #943d3d;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-/* Food Grid */
-.food-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .food-item {
-  background-color: #F7E1A1;
+  position: relative;
   border-radius: 10px;
-  padding: 15px;
-  text-align: center;
+  overflow: hidden;
+  background-color: #fff4d6;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  width: 250px;
+  transition: transform 0.3s;
+}
+
+.food-item:hover {
+  transform: scale(1.03);
 }
 
 .food-item img {
   width: 100%;
-  max-width: 200px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
-.name {
-  font-size: 22px;
-  font-weight: bold;
-  color: #943d3d;
-  margin: 10px 0;
-}
-
-.food-item p {
-  font-size: 18px;
+.food-info {
+  background-color: #943d3d;
   color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
 }
 
-/* Hide Categories */
-.hidden {
-  display: none;
+/* Shop Section */
+.shop {
+  padding: 50px 20px;
+  text-align: center;
 }
 
-
-
-
-
-
-
-/*------------ shop --------------*/
 .shop-title {
   font-size: 36px;
   font-weight: bold;
   color: #4f2a13;
   margin-bottom: 20px;
 }
-.shop {
-    position: relative;
-    width: 100%;
-    max-width: 900px; /* Adjust this if needed */
-    height: 400px; /* Set a fixed height for consistency */
-    margin: auto;
-    overflow: hidden;
-}
 
 .slideshow-container {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
 }
 
 .shop-slide {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fills the container without distortion */
-    display: none;
-    cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.shop button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-
-
-/*--------- end -----------*/
+/* About & Contact Section */
 .end {
-    display: flex;
-    justify-content: space-between; /* Creates space between two sections */
-    align-items: flex-start;
-    padding: 30px 10%;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 10%;
+  background-color: #fdf3dc;
 }
 
 .about, .contact {
-    width: 45%; /* Each takes half with a small gap */
-    padding: 20px;
-    background-color: #F7E1A1; /* Light background to highlight sections */
-    border-radius: 10px; /* Soft corners */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  width: 45%;
+  padding: 20px;
+  background-color: #F7E1A1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .shop-name {
-    font-size: 26px;
-    font-weight: bold;
-    color: #4f2a13;
+  font-size: 26px;
+  font-weight: bold;
+  color: #4f2a13;
 }
 
 .class, .team, .contact-title {
-    font-size: 22px;
-    font-weight: bold;
-    color: #6b4e3d;
+  font-size: 22px;
+  font-weight: bold;
+  color: #6b4e3d;
 }
 
-.members ol {
-    padding-left: 20px;
-    font-size: 18px;
-    color: #6b4e3d;
-}
-
-.contact-title {
-    margin-bottom: 10px;
-}
-
-.number, .mail {
-    font-size: 18px;
-    color: #943d3d;
+.members, .number, .mail {
+  font-size: 18px;
+  color: #943d3d;
 }
