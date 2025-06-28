@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amma's Kitchen Paradise</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <img src="assets/logo.png">
+                <h1 class="logo-title">AMMA'S<h2 class="caption">KITCHEN</h2></h1>
+            </div>
+            <div class="options">
+                <a href="" class="active">Home</a>
+                <a href="">Food</a>
+                <a href="">Shop</a>
+                <a href="">About</a>
+                <a href="">Contact</a>
+            </div>
+        </div>
+
+        <!-- home content -->
+        <div class="home">
+            <div class="content">
+                <h1 class="caption">Quality Service, Our Top Priority!</h1>
+                <h2 class="summary">It's not just about serving food, it's about crafting delicious flavors with care and perfection.</h2>
+            </div>
+            <div class="picture">
+                <img src="assets/main.jpg">
+            </div>
+        </div>
+
+
+        <!---- 2nd slide ---->
+<div class="menu-section">
+    <h1 class="food-title">Our Menu</h1>
+    
+    <!-- Category Buttons -->
+    <div class="menu-links">
+        <button class="menu-btn active" onclick="showCategory('starters')">Starters</button>
+        <button class="menu-btn" onclick="showCategory('food')">Food</button>
+        <button class="menu-btn" onclick="showCategory('desserts')">Desserts</button>
+        <button class="menu-btn" onclick="showCategory('beverages')">Beverages</button>
+        <button class="menu-btn" onclick="showCategory('combos')">Combos</button>
+        <button class="menu-btn" onclick="showCategory('special')">Special</button>
+    </div>
+
+    <!-- Image Grid -->
+    <div class="menu-grid" id="menu-grid">
+        <!-- Images will be inserted here dynamically -->
+    </div>
+</div>
+
+<!-------shop------------>
+<div class="shop">
+    <h1 class="shop-title">Our Shop</h1>
+    <div class="slideshow-container">
+        <a href="https://www.google.com/maps" target="_blank">
+            <img class="shop-slide" src="assets/shop/shop-1.jpg">
+        </a>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+let slideIndex = 0;
+
+function showSlides() {
+    let slides = document.querySelectorAll(".shop-slide");
+    slides.forEach(slide => slide.style.display = "none");
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+function changeSlide(n) {
+    slideIndex += n - 1;
+    let slides = document.querySelectorAll(".shop-slide");
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    slides.forEach(slide => slide.style.display = "none");
+    slides[slideIndex].style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", showSlides);
+</script>
+
+
+
+<div class="end">
+    <div class="about">
+        <h1 class="shop-name">Amma's Kitchen Paradise</h1>
+        <h1 class="class"> B.Sc Data Science</h1>
+        <h1 class="team">Team Members:-</h1>
+        <h2 class="members">
+            <ol>
+                <li>K Teja</li>
+                <li>G Sai</li>
+                <li>P Santosh</li>
+                <li>K shankar</li>
+                <li>A Ramu</li>
+                <li>B Srinu</li>
+                <li>D Hemanth</li>
+            </ol>
+        </h2>
+    </div>
+
+    <div class="contact">
+        <h1 class="contact-title">Contact Us:-</h1>
+        <h2 class="number">+91 9876543210</h2>
+        <h2 class="mail">ammas@gmail.com</h2>
+    </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    const menuData = {
+    starters: [
+        { img: "menu-1.jpg", name: "Crispy Spring Rolls", price: "$5.99" },
+        { img: "menu-2.jpg", name: "Cheese Garlic Bread", price: "$4.99" },
+        { img: "menu-3.jpg", name: "Spicy Chicken Wings", price: "$7.49" },
+        { img: "menu-4.jpg", name: "Bruschetta", price: "$6.99" },
+        { img: "menu-5.jpg", name: "Stuffed Mushrooms", price: "$5.49" },
+        { img: "menu-6.jpg", name: "Mozzarella Sticks", price: "$6.99" },
+    ],
+    food: [
+        { img: "food-1.jpg", name: "Grilled Chicken Steak", price: "$12.99" },
+        { img: "food-2.jpg", name: "Pasta Alfredo", price: "$10.99" },
+        { img: "food-3.jpg", name: "Tandoori Roti with Paneer", price: "$9.99" },
+        { img: "food-4.jpg", name: "Butter Chicken", price: "$13.99" },
+        { img: "food-5.jpg", name: "Hyderabadi Biryani", price: "$14.99" },
+        { img: "food-6.jpg", name: "Fish Curry", price: "$11.99" },
+    ],
+    desserts: [
+        { img: "dessert-1.jpg", name: "Chocolate Lava Cake", price: "$6.99" },
+        { img: "dessert-2.jpg", name: "Cheesecake", price: "$5.99" },
+        { img: "dessert-3.jpg", name: "Tiramisu", price: "$7.99" },
+        { img: "dessert-4.jpg", name: "Gulab Jamun", price: "$4.99" },
+        { img: "dessert-5.jpg", name: "Ice Cream Sundae", price: "$5.99" },
+        { img: "dessert-6.jpg", name: "Brownie with Ice Cream", price: "$6.49" },
+    ],
+    beverages: [
+        { img: "beverage-1.jpg", name: "Cold Coffee", price: "$4.49" },
+        { img: "beverage-2.jpg", name: "Lemon Iced Tea", price: "$3.99" },
+        { img: "beverage-3.jpg", name: "Mojito", price: "$5.49" },
+        { img: "beverage-4.jpg", name: "Mango Smoothie", price: "$6.49" },
+        { img: "beverage-5.jpg", name: "Fresh Lime Soda", price: "$2.99" },
+        { img: "beverage-6.jpg", name: "Strawberry Shake", price: "$5.99" },
+    ],
+    combos: [
+        { img: "combo-1.jpg", name: "Burger & Fries", price: "$8.99" },
+        { img: "combo-2.jpg", name: "Pizza & Garlic Bread", price: "$12.99" },
+        { img: "combo-3.jpg", name: "Pasta & Soup", price: "$10.99" },
+        { img: "combo-4.jpg", name: "Grilled Sandwich & Shake", price: "$9.49" },
+        { img: "combo-5.jpg", name: "Indian Thali", price: "$11.99" },
+        { img: "combo-6.jpg", name: "BBQ Platter", price: "$15.99" },
+    ],
+    special: [
+        { img: "special-1.jpg", name: "Lobster Thermidor", price: "$25.99" },
+        { img: "special-2.jpg", name: "Truffle Pasta", price: "$20.49" },
+        { img: "special-3.jpg", name: "Wagyu Beef Steak", price: "$30.99" },
+        { img: "special-4.jpg", name: "Exotic Sushi Platter", price: "$28.99" },
+        { img: "special-5.jpg", name: "Luxury Seafood Risotto", price: "$22.99" },
+        { img: "special-6.jpg", name: "Chef's Signature Dish", price: "$35.99" },
+    ],
+};
+
+function showCategory(category) {
+    const grid = document.getElementById("menu-grid");
+    grid.innerHTML = ""; // Clear previous images
+
+    menuData[category].forEach(item => {
+        const foodItem = document.createElement("div");
+        foodItem.classList.add("food-item");
+
+        const imgElement = document.createElement("img");
+        imgElement.src = `assets/${item.img}`;
+        imgElement.alt = item.name;
+
+        const infoElement = document.createElement("div");
+        infoElement.classList.add("food-info");
+        infoElement.innerHTML = `<h3>${item.name}</h3><p>${item.price}</p>`;
+
+        foodItem.appendChild(imgElement);
+        foodItem.appendChild(infoElement);
+        grid.appendChild(foodItem);
+    });
+
+    // Remove active class from all buttons and add to the clicked one
+    document.querySelectorAll(".menu-btn").forEach(btn => btn.classList.remove("active"));
+    event.target.classList.add("active");
+}
+
+// Load default category (Starters) on page load
+document.addEventListener("DOMContentLoaded", () => showCategory("starters"));
+</script>
+</body>
+</html>
