@@ -14,6 +14,15 @@ A simple and responsive restaurant website designed as part of a mini project. I
 
 ---
 
+
+## 🖼️ Screenshot
+
+Here is a preview of the Amma's Kitchen Paradise webpage:
+
+![Dashboard Screenshot](assets/dashboard.png)
+
+---
+
 ## 🧰 Technologies Used
 
 - HTML  
